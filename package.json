@@ -1,8 +1,7 @@
 {
-  "name": "webgame",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "scarecrow-clicker",
+  "version": "1.0.0",
+  "homepage": "https://choyowani.github.io/webgame/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
