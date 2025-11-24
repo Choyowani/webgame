@@ -1,4 +1,3 @@
-// src/game.js - 진짜 진짜 최종 완성판 (2025.11.24 기준)
 import Phaser from "phaser";
 
 export default class GameScene extends Phaser.Scene {
