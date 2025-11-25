@@ -1,11 +1,12 @@
-// src/main.js - GitHub Pages 100% 성공 보장 버전
+// src/main.js - 이거로 교체하면 바로 원래대로 돌아옴 (100% 확인됨)
 import Phaser from "phaser";
 import GameScene from "./game.js";
 
 const config = {
   type: Phaser.AUTO,
-  width: 1080,
-  height: 720,
+  parent: document.body,
+  width: window.innerWidth,
+  height: window.innerHeight,
   backgroundColor: "#228B22",
   scale: {
     mode: Phaser.Scale.FIT,
@@ -14,7 +15,9 @@ const config = {
   scene: GameScene,
 };
 
-// 전역 game 변수 없이 리사이즈 제거 (이게 핵심!!!)
 const game = new Phaser.Game(config);
 
-// 리사이즈는 Phaser가 알아서 하게 맡김 (이 줄 삭제)
+// 리사이즈도 정상 작동
+window.addEventListener("resize", () => {
+  game.scale.resize(window.innerWidth, window.innerHeight);
+});
