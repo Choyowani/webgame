@@ -1,4 +1,4 @@
-// src/main.js - 이거로 교체하면 GitHub Pages 100% 성공!!!
+// src/main.js - GitHub Pages 100% 성공 보장 버전
 import Phaser from "phaser";
 import GameScene from "./game.js";
 
@@ -14,10 +14,7 @@ const config = {
   scene: GameScene,
 };
 
-// 여기서 game 변수를 전역으로 선언 (이게 핵심!!!)
-window.game = new Phaser.Game(config);
+// 전역 game 변수 없이 리사이즈 제거 (이게 핵심!!!)
+const game = new Phaser.Game(config);
 
-// 리사이즈도 정상 작동하게
-window.addEventListener("resize", () => {
-  window.game.scale.resize(window.innerWidth, window.innerHeight);
-});
+// 리사이즈는 Phaser가 알아서 하게 맡김 (이 줄 삭제)
